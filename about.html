@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Cre8ive Cloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#8b5cf6',
+                            secondary: '#ec4899',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-dark text-white overflow-x-hidden selection:bg-brand-accent selection:text-white">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div
+            class="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-blue-500/20 rounded-full blur-[100px] animate-pulse-slow">
+        </div>
+    </div>
+
+    <!-- Nav (Same as index) -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/5 border-b border-white/10"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-gradient-to-tr from-brand-accent to-brand-secondary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                    <i class="fas fa-cloud text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight">Cre8ive<span
+                        class="text-brand-accent">Cloud</span></span>
+            </a>
+
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="nav-link hover:text-brand-accent transition-colors">Home</a>
+                <a href="about.html" class="nav-link active text-brand-accent">About</a>
+                <a href="gallery.html" class="nav-link hover:text-brand-accent transition-colors">Gallery</a>
+                <a href="contact.html" class="nav-link hover:text-brand-accent transition-colors">Contact</a>
+                <button id="music-btn"
+                    class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors relative overflow-hidden">
+                    <i class="fas fa-music text-sm"></i>
+                </button>
+            </div>
+
+            <button class="md:hidden text-2xl" id="menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="md:hidden absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-b border-white/10 hidden"
+            id="mobile-menu">
+            <div class="flex flex-col p-6 gap-4 text-center">
+                <a href="index.html" class="py-2 hover:text-brand-accent">Home</a>
+                <a href="about.html" class="py-2 hover:text-brand-accent">About</a>
+                <a href="gallery.html" class="py-2 hover:text-brand-accent">Gallery</a>
+                <a href="contact.html" class="py-2 hover:text-brand-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-12 px-6 max-w-7xl mx-auto">
+        <h1 class="text-5xl font-bold mb-12 text-center">Who We Are</h1>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+            <div class="relative group">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+                </div>
+                <div
+                    class="relative bg-white/5 border border-white/10 rounded-2xl p-8 aspect-square flex items-center justify-center overflow-hidden">
+                    <!-- Abstract representation of 'Image' since generation failed -->
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-80 mask-image-cloud">
+                        <i
+                            class="fas fa-users text-9xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white/20"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-brand-accent">We Construct Dreams</h2>
+                <p class="text-slate-300 leading-relaxed text-lg">
+                    Cre8ive Cloud was born from a simple idea: the web should be beautiful. We don't just write code; we
+                    compose digital symphonies. Our team of visionary designers and developers pushes the boundaries of
+                    what browser technology can do.
+                </p>
+                <p class="text-slate-300 leading-relaxed text-lg">
+                    Focusing on aesthetics, performance, and user experience, we ensure that every pixel serves a
+                    purpose. No Node.js backend required - just pure, unadulterated frontend mastery.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                        <h3 class="text-4xl font-bold text-brand-secondary mb-2">50+</h3>
+                        <p class="text-sm text-slate-400 uppercase tracking-widest">Projects</p>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                        <h3 class="text-4xl font-bold text-brand-accent mb-2">100%</h3>
+                        <p class="text-sm text-slate-400 uppercase tracking-widest">Creative</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-t border-white/10 py-12 px-6 bg-black/20 backdrop-blur-lg mt-auto">
+        <div class="max-w-7xl mx-auto text-center text-slate-500 text-sm">
+            &copy; 2024 Cre8ive Cloud.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
