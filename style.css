@@ -1,0 +1,119 @@
+@layer utilities {
+    .glass-card {
+        @apply bg-white/5 border border-white/10 backdrop-blur-lg;
+    }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-x {
+    background-size: 200% auto;
+    animation: gradient-x 4s linear infinite;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #ec4899;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #ec4899; }
+}
+
+/* Navbar active link indicator */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #8b5cf6;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Mask for About cloud image */
+.mask-image-cloud {
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FF0066' d='M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.2,-19.2,95.8,-5.2C93.4,8.9,81.8,22.1,70.8,33.9C59.8,45.7,49.4,56.1,37.6,63.1C25.8,70.1,12.6,73.8,0.2,73.4C-12.2,73.1,-24.1,68.7,-35.3,61.4C-46.5,54.1,-56.9,43.9,-64.3,31.9C-71.7,19.9,-76,6.1,-74.6,-6.9C-73.2,-19.9,-66.1,-32.1,-56.3,-41.8C-46.5,-51.5,-34,-58.7,-21.3,-66.9C-8.6,-75.1,4.3,-84.3,16.7,-82.7C29.1,-81.1,41,-68.7,46.2,-60.1L44.7,-76.4Z' transform='translate(100 100)' /%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+/* Music wave animation */
+.music-playing .fa-music {
+    color: #8b5cf6;
+    animation: pulse 1s infinite;
+}
+
+/* Mobile menu transition */
+#mobile-menu {
+    top: 100%;
+    z-index: 40;
+}
